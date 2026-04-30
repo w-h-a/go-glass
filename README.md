@@ -26,11 +26,7 @@ graph LR
 
 ```mermaid
 graph TD
-    subgraph "cmd/go-glass"
-        MAIN[main.go]
-    end
-
-    subgraph "internal/domain — pure functions"
+    subgraph "internal/domain/"
         EV[event.go<br/>wide event]
         COL[column.go<br/>typed series]
         SEG[segment.go<br/>time-partitioned, immutable]
@@ -56,8 +52,6 @@ graph TD
         STF[storage/file/<br/>local filesystem]
     end
 
-    MAIN --> ING
-    MAIN --> QE
     ING --> ENC
     ING --> SEG
     ING --> SCH
